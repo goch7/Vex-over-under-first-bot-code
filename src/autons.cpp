@@ -337,6 +337,8 @@ pros::delay(100);
 
 void awpleftside(){
 
+/*
+
 // blocker on
 rightBlocker.set_value(true);
 //go back
@@ -419,17 +421,107 @@ pros::delay(100);
 chassis.set_drive_pid(-35, 90, false);
 chassis.wait_drive();
 
+*/
+
+//small intake to keep it in
+intake.move(-30);
+
+//go forward
+chassis.set_drive_pid(12, 127, false);
+chassis.wait_drive();
+
+//open wings
+leftBlocker.set_value(true);
+
+//go back to push the corner triball out of the corner
+chassis.set_drive_pid(-16, 127, false);
+chassis.wait_drive();
+
+//close wings
+leftBlocker.set_value(false);
+
+//intake
+intake.move(-30);
+
+//go forwards
+chassis.set_drive_pid(18, 127, false);
+chassis.wait_drive();
+
+//turn the bot
+chassis.set_turn_pid(45, 127);
+chassis.wait_drive();
+pros::delay(100);
+
+//move foward
+chassis.set_drive_pid(2, 90, false);
+chassis.wait_drive();
+
+//outake
+intake.move(127);
+pros::delay(100);
+
+//move foward
+chassis.set_drive_pid(9, 90, false);
+chassis.wait_drive();
+
+//move back
+chassis.set_drive_pid(-11, 127, false);
+chassis.wait_drive();
+pros::delay(100);
+
+//intake off
+intake.move(0);
+
+//turn 180
+chassis.set_turn_pid(180, 127);
+chassis.wait_drive();
+pros::delay(100);
+
+//move back little
+chassis.set_drive_pid(-3, 127, false);
+chassis.wait_drive();
+
+//turn
+chassis.set_turn_pid(225, 127);
+chassis.wait_drive();
+pros::delay(100);
+
+//move back to score
+chassis.set_drive_pid(-15, 127, false);
+chassis.wait_drive();
+pros::delay(100);
+
+//move foward
+chassis.set_drive_pid(8, 127, false);
+chassis.wait_drive();
+
+//turn
+chassis.set_turn_pid(180, 127);
+chassis.wait_drive();
+pros::delay(100);
+
+//move forward
+chassis.set_drive_pid(26, 127, false);
+chassis.wait_drive();
+
+//final turn for bar triball
+chassis.set_turn_pid(312, 127);
+chassis.wait_drive();
+
+//blocker on
+balance.set_value(true);
+
+//move back to touch hh
+chassis.set_drive_pid(-31, 127, false);
+chassis.wait_drive();
+
 }
-
-void pointsleftside(){
-
-}
-
 
 
 void awprightside(){
 // blocker on
 leftBlocker.set_value(true);
+
 //go back
 chassis.set_drive_pid(-12, 127, false);
 chassis.wait_drive();
@@ -448,8 +540,8 @@ leftBlocker.set_value(false);
 chassis.set_turn_pid(0, 127);
 chassis.wait_drive();
 
-//move foward
-chassis.set_drive_pid(26, 127, false);
+//move forward
+chassis.set_drive_pid(28, 127, false);
 chassis.wait_drive();
 
 //turn
@@ -459,7 +551,7 @@ chassis.wait_drive();
 //intake
 intake.move(-127);
 //move foward
-chassis.set_drive_pid(22, 127, false);
+chassis.set_drive_pid(21, 127, false);
 chassis.wait_drive();
 
 //move back
@@ -473,7 +565,7 @@ chassis.set_turn_pid(180, 127);
 chassis.wait_drive();
 
 //move foward
-chassis.set_drive_pid(20, 127, false);
+chassis.set_drive_pid(21, 127, false);
 chassis.wait_drive();
 
 //turn
@@ -482,6 +574,7 @@ chassis.wait_drive();
 
 //outtake
 intake.move(127);
+
 //move foward
 chassis.set_drive_pid(6, 127, false);
 chassis.wait_drive();
@@ -501,31 +594,51 @@ intake.move(0);
 chassis.set_drive_pid(-15, 127, false);
 chassis.wait_drive();
 
-//move foward
-chassis.set_drive_pid(12, 127, false);
-chassis.wait_drive();
-
-//turn
-chassis.set_turn_pid(0, 127);
-chassis.wait_drive();
-
-//move foward
-chassis.set_drive_pid(23, 127, false);
+//move foward little
+chassis.set_drive_pid(6, 127, false);
 chassis.wait_drive();
 
 //turn
 chassis.set_turn_pid(-135, 127);
 chassis.wait_drive();
 
-//move foward
-chassis.set_drive_pid(-34, 95, false);
+//move back
+chassis.set_drive_pid(-48, 127, false);
 chassis.wait_drive();
+
+//expand blocker to touch bar
+rightBlocker.set_value(true);
+
+
+/*
+//turn
+chassis.set_turn_pid(0, 127);
+chassis.wait_drive();
+
+//move foward
+chassis.set_drive_pid(22, 127, false);
+chassis.wait_drive();
+
+//turn
+chassis.set_turn_pid(-135, 127);
+chassis.wait_drive();
+
+//balance
+balance.set_value(true);
+
+//move back
+chassis.set_drive_pid(-34, 127, false);
+chassis.wait_drive();
+
+
+*/
 
 }
 
 void pointsrightside(){
 // blocker on
 leftBlocker.set_value(true);
+
 //go back
 chassis.set_drive_pid(-12, 127, false);
 chassis.wait_drive();
@@ -640,6 +753,146 @@ leftBlocker.set_value(false);
 
 }
 
+void firstpartrightsideroute(){
+//intake
+intake.move(-127);
+
+//move foward to get tribal
+chassis.set_drive_pid(9, 127, false);
+chassis.wait_drive();
+
+//move back
+chassis.set_drive_pid(-36.5, 127, false);
+chassis.wait_drive();
+
+//turn
+intake.move(-127);
+chassis.set_turn_pid(-45, 90);
+chassis.wait_drive();
+
+//open wings
+leftBlocker.set_value(true);
+
+//move back to get out corner tribal
+chassis.set_drive_pid(-22, 127, false);
+chassis.wait_drive();
+
+//close wing
+leftBlocker.set_value(false);
+
+//move back
+chassis.set_drive_pid(-2, 127, false);
+chassis.wait_drive();
+
+//turn
+chassis.set_turn_pid(90, 90);
+chassis.wait_drive();
+
+//outake
+intake.move(127);
+
+//move foward to push tribal
+chassis.set_drive_pid(6, 127, false);
+chassis.wait_drive();
+
+//move back
+chassis.set_drive_pid(-7, 127, false);
+chassis.wait_drive();
+
+//turn
+chassis.set_turn_pid(-90, 127);
+chassis.wait_drive();
+
+//move back to score
+chassis.set_drive_pid(-11.5, 127, false);
+chassis.wait_drive();
+
+//move foward
+chassis.set_drive_pid(12.5, 127, false);
+chassis.wait_drive();
+
+//turn to middle tribal
+chassis.set_turn_pid(16.75, 100);
+chassis.wait_drive();
+
+//intake
+intake.move(-127);
+
+//move foward
+chassis.set_drive_pid(43.5, 127, false);
+chassis.wait_drive();
+
+
+
+
+//slower intake
+intake.move(-90);
+
+//turn
+chassis.set_turn_pid(135, 127);
+chassis.wait_drive();
+
+//stop outtake
+intake.move(0);
+
+//move foward
+chassis.set_drive_pid(12, 127, false);
+chassis.wait_drive();
+
+//outtake to net
+intake.move(70);
+pros::delay(200);
+
+//turn
+chassis.set_turn_pid(45, 127);
+chassis.wait_drive();
+
+//intake
+intake.move(-127);
+
+//move foward
+chassis.set_drive_pid(20, 127, false);
+chassis.wait_drive();
+
+//turn
+chassis.set_turn_pid(180, 50);
+chassis.wait_drive();
+
+//intake slow
+intake.move(-60);
+
+//move foward to score
+chassis.set_drive_pid(18, 127, false);
+chassis.wait_drive();
+
+//move back little
+chassis.set_drive_pid(-6, 127, false);
+chassis.wait_drive();
+
+//outake
+intake.move(127);
+pros::delay(100);
+
+//turn
+chassis.set_turn_pid(0, 127);
+chassis.wait_drive();
+
+// blocker on
+leftBlocker.set_value(true);
+
+//turn
+chassis.set_turn_pid(10, 127);
+chassis.wait_drive();
+
+//score with back
+chassis.set_drive_pid(-16, 127, false);
+chassis.wait_drive();
+
+// blocker off
+leftBlocker.set_value(false);
+
+}
+
 void nagahashiauton(){
 //move back
 chassis.set_drive_pid(-21, 127, false);
@@ -656,9 +909,11 @@ chassis.wait_drive();
 //open right blocker
 rightBlocker.set_value(true);
 
+
 //cata and move back
-catapult.move(95);
+catapult.move(90);
 pros::delay(39000);
+
 
 //stop cata
 catapult.move(0);
@@ -682,6 +937,13 @@ chassis.wait_drive();
 chassis.set_turn_pid(-90, 127);
 chassis.wait_drive();
 
+
+
+//outake
+intake.move(127);
+
+
+
 //move foward
 chassis.set_drive_pid(68, 127, false);
 chassis.wait_drive();
@@ -689,6 +951,9 @@ chassis.wait_drive();
 //turn
 chassis.set_turn_pid(45, 127);
 chassis.wait_drive();
+
+//stop outake
+intake.move(0);
 
 //score back
 chassis.set_drive_pid(-35, 127, false);
@@ -723,7 +988,7 @@ rightBlocker.set_value(true);
 leftBlocker.set_value(true);
 
 //move back
-chassis.set_drive_pid(-26, 127, false);
+chassis.set_drive_pid(-28, 127, false);
 chassis.wait_drive();
 
 //close blocker
@@ -731,19 +996,19 @@ rightBlocker.set_value(false);
 leftBlocker.set_value(false);
 
 //move foward
-chassis.set_drive_pid(26, 90, false);
+chassis.set_drive_pid(28, 127, false);
 chassis.wait_drive();
 
 //turn
-chassis.set_turn_pid(0, 90);
+chassis.set_turn_pid(0, 127);
 chassis.wait_drive();
 
 //move back
-chassis.set_drive_pid(-24, 90, false);
+chassis.set_drive_pid(-21, 127, false);
 chassis.wait_drive();
 
 //turn
-chassis.set_turn_pid(90, 90);
+chassis.set_turn_pid(90, 127);
 chassis.wait_drive();
 
 //open both blocker
@@ -751,7 +1016,7 @@ rightBlocker.set_value(true);
 leftBlocker.set_value(true);
 
 //move back
-chassis.set_drive_pid(-26, 127, false);
+chassis.set_drive_pid(-28, 127, false);
 chassis.wait_drive();
 
 //close blocker
