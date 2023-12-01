@@ -6,9 +6,9 @@ extern Drive chassis;
 
 void firstauton();
 void awpleftside();
-void pointsleftside();
 void awprightside();
 void pointsrightside();
+void firstpartrightsideroute();
 void nagahashiauton();
 
 void hello();
