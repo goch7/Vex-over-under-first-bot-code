@@ -72,12 +72,13 @@ void initialize() {
   // Autonomous Selector using LLEMU
   ez::as::auton_selector.add_autons({
     //Auton("Northviewvex\n\n71811N (firstauton)", firstauton),
-    //Auton("Northviewvex\n\n71811N (awpleftside)", awpleftside),
-    //Auton("Northviewvex\n\n71811N (pointsleftside)", pointsleftside),
-    //Auton("Northviewvex\n\n71811N (awprightside)", awprightside),
-    Auton("Northviewvex\n\n71811N (pointsrightside)", pointsrightside),
     //Auton("Northviewvex\n\n71811N (hello)", hello),
+    //Auton("Northviewvex\n\n71811N (awpleftside)", awpleftside),
+    //Auton("Northviewvex\n\n71811N (awprightside)", awprightside),
+    //Auton("Northviewvex\n\n71811N (pointsrightside)", pointsrightside),
+    Auton("Northviewvex\n\n71811N (firstpartrightsideroute)", firstpartrightsideroute),
     //Auton("Nagahashi\n\n71811N (nagahashiauton)", nagahashiauton),
+
 
   });
 
@@ -173,4 +174,6 @@ void opcontrol() {
     pros::delay(ez::util::DELAY_TIME); // This is used for timer calculations!  Keep this ez::util::DELAY_TIME
   }
 }
+
+
 
